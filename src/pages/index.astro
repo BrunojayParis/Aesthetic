@@ -1,0 +1,204 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import { getPermalink } from '~/utils/permalinks';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Aesthetic - Surgical websites, Authentic Ads',
+  ignoreTitleTemplate: true,
+};
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Consultanos',
+        href: getPermalink('/contact'),
+        target: '',
+        icon: '',
+      },
+    ]}
+    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Digitalización a medida para ganar<span class="text-accent highlight"> Nuevos Pacientes</span>
+    </Fragment>
+    
+    
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Ayudamos a profesionales de la salud a ampliar sus carteras, fidelizar sus clientes y mejorar su reputación. <span class="font-semibold">Garantizado por contrato.</span> 
+      </span>
+    </Fragment>
+  </Hero>
+
+   <!-- Steps2 Widget *************** -->
+  <Steps2
+    title="Amplia tu cartera y Mejora tu reputacion"
+    subtitle="Según el análisis de la industria, tres cuartas partes de los receptores de servicios de salud buscan profesionales de la salud en línea. Además, casi el 90% de todos los clientes de atención médica menores de 40 años eligen a profesionales médicos basándose en si tienen una presencia en línea positiva y sólida. Conoce como lo abordamos en 3 simples pasos:"
+    items={[
+      {
+        title: 'Elegancia y Funcionalidad',
+        description:
+          'Creamos tu sitio web profesional y atractivo, optimizado para convertir y adaptado a las necesidades específicas de tus clientes',
+      },
+      {
+        title: 'Resultados en cada Click',
+        description:
+          'Desarrollamos y gestionamos campañas publicitarias efectivas en Meta para llegar a la audiencia adecuada, generar leads cualificados y maximizar el retorno de la inversión publicitaria',
+      },
+      {
+        title: 'Servicio 5 Estrellas',
+        description:
+          'Monitoreamos y gestionamos tu reputación en línea, obteniendo y promoviendo testimonios positivos, y abordando de manera proactiva cualquier comentario negativo para construir y mantener una imagen positiva',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    id="Servicios"
+    title="Encontra valor en cada uno de nuestros servicios"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    items={[
+      {
+        title: 'Gestión de Publicidad en Facebook (Meta)',
+        description: "Tus servicios aparecen donde está la la atención, en las redes sociales",
+        icon: 'flat-color-icons:advertising',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+      {
+        title: 'Desarrollo y Optimización de Páginas Web',
+        description:
+          "La mejor vitrina digital para atraer y cautivar con tus resultados",
+        icon: 'flat-color-icons:template',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+      {
+        title: 'Gestión de Reputación Online',
+        description:
+          'Cuidamos tu imagen de cara al cliente, asegurando esas 5 estrellas',
+        icon: 'flat-color-icons:approval',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+      {
+        title: 'Estrategias de Marketing Digital Personalizadas',
+        description:
+          "Cada práctica es diferente. Resaltamos lo que te hace especial, te llevamos al siguiente nivel.",
+        icon: 'flat-color-icons:document',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+      {
+        title: 'Optimización de motor de Busqueda (SEO)',
+        description:
+          'Te ponemos en la primera plana, en todos lados',
+        icon: 'flat-color-icons:database',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+      {
+        title: 'Diseño Creativo y Contenido Persuasivo',
+        description: 'Del concepto a la captura: Contenido que cuenta tu historia y captura miradas',
+        icon: 'flat-color-icons:voice-presentation',
+        callToAction:{
+          variant: 'terciary',
+          text:'Conocé mas',
+          href:getPermalink('/contact'),
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="Pasos"
+    title="Cómo Adquirir Nuestros Servicios "
+    items={[
+      {
+        title: '1: <span class="font-medium">Consulta Inicial</span>',
+        description:
+          "Realiza una consulta inicial gratuita para comprender tus necesidades específicas",
+        icon: 'tabler:package',
+      },
+      {
+        title: '2: <span class="font-medium">Evaluación de Necesidades</em>',
+        description:
+          "Analizamos detalladamente tus necesidades, tus objetivos comerciales y las áreas específicas donde necesitas apoyo en la digitalización",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: '3: <span class="font-medium">Presentación de Propuesta</span>',
+        description:
+          'Destacamos los beneficios que puede tener tu practica con nuestros servicios',
+        icon: 'tabler:paint',
+      },
+      {
+        title: '4: <span class="font-medium">Firma del Contrato</span>',
+        description:
+          'Firmamos el contrato detallando los servicios, plazos, tarifas y nuestra promesa',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Listo!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+ 
+
+  <ContactUs
+  id="Consulta"
+  title="Drop us a message today!"
+  subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+  inputs={[
+    {
+      type: 'url',
+      name: 'url',
+      label: 'Compartinos tu pagina web para ver como podemos ayudarte!',
+    },
+  ]}
+  button="Consultá Gratis"
+  description="Our support team typically responds within 24 business hours."
+/>
+
+</Layout>
