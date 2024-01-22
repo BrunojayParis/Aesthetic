@@ -199,6 +199,7 @@ export interface Collapse {
 }
 
 export interface Form {
+  names?:string;
   inputs?: Array<Input>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
