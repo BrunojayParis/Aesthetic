@@ -7,11 +7,14 @@ import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import { getPermalink } from '~/utils/permalinks';
 import ContactUs from '~/components/widgets/Contact.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = {
   title: 'Aesthetic - Surgical websites, Authentic Ads',
   ignoreTitleTemplate: true,
 };
+
 
 ---
 
@@ -31,13 +34,12 @@ const metadata = {
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Digitalización a medida para ganar<span class="text-accent highlight"> Nuevos Pacientes</span>
+      Marketing Digital a Medida para <br><span class="text-accent highlight" >Medicina Estética</span>
     </Fragment>
-    
     
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Ayudamos a profesionales de la salud a ampliar sus carteras, fidelizar sus clientes y mejorar su reputación. <span class="font-semibold">Garantizado por contrato.</span> 
+        Ayudamos a profesionales de la Medicina Estética a ampliar sus carteras, fidelizar sus pacientes y mejorar su reputación. <span class="font-semibold">Garantizado por contrato.</span> 
       </span>
     </Fragment>
   </Hero>
@@ -45,7 +47,7 @@ const metadata = {
    <!-- Steps2 Widget *************** -->
   <Steps2
     title="Amplia tu cartera y Mejora tu reputacion"
-    subtitle="Según el análisis de la industria, tres cuartas partes de los receptores de servicios de salud buscan profesionales de la salud en línea. Además, casi el 90% de todos los clientes de atención médica menores de 40 años eligen a profesionales médicos basándose en si tienen una presencia en línea positiva y sólida. Conoce como lo abordamos en 3 simples pasos:"
+    subtitle="Según el análisis de la industria, tres cuartas partes de los receptores de servicios de salud buscan profesionales de la salud en línea. Además, casi el 90% de todos los clientes de atención médica menores de 40 años eligen a profesionales médicos basándose en si tienen una presencia en línea positiva y sólida.<br> El marketing digital para proveedores de atención médica es vital.Trabajamos codo a codo con vos para desarrollar estrategias centradas en el paciente que aumenten la fidelidad a la práctica, la visibilidad de la marca y los ingresos, al mismo tiempo que reducen los costos de marketing de la industria médica.<br>Conoce como lo abordamos en 3 simples pasos:"
     items={[
       {
         title: 'Elegancia y Funcionalidad',
@@ -64,7 +66,6 @@ const metadata = {
       },
     ]}
   />
-
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -187,17 +188,86 @@ const metadata = {
   <ContactUs
   names="url"
   id="Consulta"
-  title="Drop us a message today!"
-  subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+  title="Compartinos tu pagina web"
+  subtitle="Para ver como podemos ayudarte, copia y pega la URL de tu pagina web aca abajo"
   inputs={[
     {
       type: 'url',
       name: 'url',
-      label: 'Compartinos tu pagina web para ver como podemos ayudarte!',
+      label: 'URL',
     },
   ]}
   button="Consultá Gratis"
-  description="Our support team typically responds within 24 business hours."
+  description="Respondemos dentro de las 24hs."
 />
+<Features3
+    title="A quienes ayudamos?"
+    subtitle="Trabajamos estrechamente con diferentes tipos de prácticas médicas para aumentar sus listas de pacientes, mejorar la satisfacción del paciente y hacer crecer tus ingresos, al mismo tiempo que reducimos el gasto general en marketing de salud."
+    columns={4}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Odontología - Estética Dental',
+        description:
+          'Profesionales que se realizan procedimientos como Carillas dentales, Reconstrucciones dentales, Ortodoncia.',
+        icon: 'tabler:dental',
+      },
+      {
+        title: 'Cirugía Estética',
+        description:
+          'Profesionales que realizan procedimientos como Liposucción, Mamoplastía, Rinoplastía, Reconstrucciones.',
+        icon: 'tabler:medical-cross',
+      },
+      {
+        title: 'Medical Spa',
+        description:
+          'Profesionales que realizan procedimientos como Inyecciones de Botox, Dysport y Xeomin, Inyecciones de relleno dérmico, Tratamientos con láser.',
+        icon: 'tabler:needle',
+      },
+      {
+        title: 'Centros medicos Capilares',
+        description:
+          'Profesionales que realizan procedimientos como Implantes Capilares, Mesoterapia Capilar.',
+        icon: 'tabler:pills',
+      },
+
+    ]}
+  />
+
+  <FAQs
+    title="Preguntas Frecuentes"
+    subtitle="Dudas que Generalmente tienen los doctores sobre el Marketing Digital y el Diseño web"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: '¿En que tipo de practicas se especializan?',
+        description:
+          "Nos especializamos en una gran variedad de especialidades medicas como Cuidado Capilar, Medical Spas y Cirujanos Plásticos.",
+      },
+      {
+        title: '¿Hacen Rediseño de página web?',
+        description:
+          'Absolutamente. Nuestra primera acción será evaluar el rendimiento de su sitio web actual. A partir de ahí, si es necesario, rediseñaremos su sitio web según sus especificaciones, construido sobre un sólido marco de SEO para un rendimiento mejorado.',
+      },
+      {
+        title: '¿Me garantizan los resultados con el Marketing Digital?',
+        description:
+          "Las garantías en los servicios de marketing son algo inaudito en la industria de la salud, pero aquí hacemos las cosas de manera diferente. Garantizamos resultados en 60 días. De no llegar a nuestros objetivos, devolvemos la totalidad de la tarifa (excluyendo anuncios)",
+      },
+      {
+        title: "¿En cuanto tiempo se ven los resultados con sus servicios?",
+        description:
+          "La respuesta depende de cuán agresivamente desee emprender sus esfuerzos de marketing en el ámbito de la salud. ¿Se centrará únicamente en generar tráfico orgánico (a más largo plazo)? ¿Incluirá anuncios? ¿Está su sitio web optimizado y listo para clasificarse alto en Google? Todos estos factores influyen en la ecuación. Dicho esto, generalmente empezamos a ver resultados tangibles alrededor del día 90, con un aumento constante a partir de ese momento.",
+      },
+      {
+        title: '¿Cuanto se gasta normalmente en Marketing Digital?',
+        description:
+          "Las prácticas privadas de tamaño pequeño a menudo pueden gastar desde U$1,000 a U$3,000 o más al mes, mientras que las prácticas médicas grandes pueden gastar más de U$10,000 al mes en campañas de marketing. La respuesta es que realmente depende de sus objetivos y presupuesto.",
+      },
+    ]}
+  />
+
+
 
 </Layout>
