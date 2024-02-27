@@ -3,6 +3,8 @@ import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import Headline from "~/components/ui/Headline.astro";
 import ItemGrid2 from "~/components/ui/ItemGrid2.astro";
 import type { Features } from "~/types";
+import Button from "../ui/Button.astro";
+
 //import { getPermalink } from "~/utils/permalinks";
 
 const {
@@ -12,6 +14,7 @@ const {
   items = [],
   columns = 3,
   defaultIcon,
+  callToAction1,
 
   id,
   isDark = false,
@@ -46,4 +49,19 @@ const {
       ...((classes?.items as {}) ?? {}),
     }}
   />
+  <div class="max-w-3xl m-auto">
+    {callToAction1 && (
+      <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4  py-4">
+        {Array.isArray(callToAction1) ? (
+          callToAction1.map((action) => (
+            <div class="flex w-full sm:w-auto">
+              <Button {...(action || {})} class="w-full sm:mb-0" />
+            </div>
+          ))) : 
+          (
+          <Fragment set:html={callToAction1} />
+          )}
+      </div>
+    )}
+  </div>
 </WidgetWrapper>

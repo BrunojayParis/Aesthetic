@@ -2,10 +2,7 @@ import { getPermalink} from './utils/permalinks';
 
 export const headerData = {
   links: [
-    {
-      text: 'Servicios',
-      href:  getPermalink('/services'),
-    },
+
   ],
   actions: [{ text: 'Contactanos', href: getPermalink('/contact'), target: '' }],
 };

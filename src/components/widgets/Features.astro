@@ -4,6 +4,7 @@ import ItemGrid from "~/components/ui/ItemGrid.astro";
 import Headline from "~/components/ui/Headline.astro";
 import type { Features } from "~/types";
 
+
 const {
   title = await Astro.slots.render("title"),
   subtitle = await Astro.slots.render("subtitle"),
@@ -43,4 +44,5 @@ const {
       ...((classes?.items as {}) ?? {}),
     }}
   />
+  
 </WidgetWrapper>

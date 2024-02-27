@@ -9,6 +9,7 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Features from '~/components/widgets/Features.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Aesthetic - Surgical websites, Authentic Ads',
@@ -115,6 +116,7 @@ const metadata = {
       icon: 'tabler:bulb',
     },
   ]}
+
 />
 
 
@@ -142,10 +144,20 @@ const metadata = {
         icon: 'flat-color-icons:database',
       },
     ]}
+      callToAction1={[
+        {
+          variant: 'primary',
+          text: 'Conocé mas',
+          href: getPermalink('/services'),
+          icon: '',
+        },
+      ]}
+
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
+
   </Features2>
 
   <!-- Steps Widget ****************** -->
