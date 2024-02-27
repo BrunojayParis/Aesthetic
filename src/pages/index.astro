@@ -8,6 +8,7 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import { getPermalink } from '~/utils/permalinks';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Features from '~/components/widgets/Features.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = {
@@ -33,7 +34,7 @@ const metadata = {
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Marketing Digital a Medida para <br><span class="text-accent highlight" >Medicina Estética</span>
+      Websites a Medida para la<br><span class="text-accent highlight" >Medicina Estética</span>
     </Fragment>
     
     <Fragment slot="subtitle">
@@ -46,7 +47,7 @@ const metadata = {
    <!-- Steps2 Widget *************** -->
   <Steps2
     title="Amplia tu cartera y Mejora tu reputacion"
-    subtitle="Según el análisis de la industria, tres cuartas partes de los receptores de servicios de salud buscan profesionales de la salud en línea. Además, casi el 90% de todos los clientes de atención médica menores de 40 años eligen a profesionales médicos basándose en si tienen una presencia en línea positiva y sólida.<br> El marketing digital para proveedores de atención médica es vital.Trabajamos codo a codo con vos para desarrollar estrategias centradas en el paciente que aumenten la fidelidad a la práctica, la visibilidad de la marca y los ingresos, al mismo tiempo que reducen los costos de marketing de la industria médica.<br>Conoce como lo abordamos en 3 simples pasos:"
+    subtitle="Según el análisis de la industria, tres cuartas partes de los receptores de servicios de salud buscan profesionales de la salud en línea. Además, casi el 90% de todos los clientes de atención médica menores de 40 años eligen a profesionales médicos basándose en si tienen una presencia en línea positiva y sólida.<br> Una página Web para proveedores de atención médica es vital.Trabajamos codo a codo con vos para desarrollar estrategias centradas en el paciente que aumenten la fidelidad a la práctica, la visibilidad de la marca y los ingresos, al mismo tiempo que reducen los costos de marketing de la industria médica.<br>Conoce como lo abordamos en 3 simples pasos:"
     items={[
       {
         title: 'Elegancia y Funcionalidad',
@@ -54,9 +55,9 @@ const metadata = {
           'Creamos tu sitio web profesional y atractivo, optimizado para convertir y adaptado a las necesidades específicas de tus clientes',
       },
       {
-        title: 'Resultados en cada Click',
+        title: 'En Primera plana',
         description:
-          'Desarrollamos y gestionamos campañas publicitarias efectivas en Meta para llegar a la audiencia adecuada, generar leads cualificados y maximizar el retorno de la inversión publicitaria',
+          'Aumentamos su presencia en los motores de búsqueda y convertimos más visitantes en clientes fieles con nuestro servicio de SEO',
       },
       {
         title: 'Servicio 5 Estrellas',
@@ -64,24 +65,64 @@ const metadata = {
           'Monitoreamos y gestionamos tu reputación en línea, obteniendo y promoviendo testimonios positivos, y abordando de manera proactiva cualquier comentario negativo para construir y mantener una imagen positiva',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+  
   <!-- Features2 Widget ************** -->
+
+  <Features
+  id="features"
+  tagline="Beneficios"
+  title="Que esperar de nosotros?"
+  subtitle="Estos son algunos de los beneficios de tener una pagina web para consultorios y profesionales de la salud"
+  items={[
+    {
+      title: 'Mayor Visibilidad en Línea',
+      description:
+        'Una página web optimizada con SEO aumentará la visibilidad de la práctica médica en los resultados de búsqueda, lo que facilitará que los pacientes potenciales la encuentren cuando busquen servicios médicos específicos',
+      icon: 'tabler:brand-tailwind',
+    },
+    {
+      title: 'Atracción de Pacientes Calificados',
+      description:
+        'El SEO dirigido a palabras clave relevantes atraerá a pacientes que estén específicamente interesados en los servicios médicos ofrecidos, lo que aumentará la probabilidad de que esos visitantes se conviertan en pacientes reales',
+      icon: 'tabler:components',
+    },
+    {
+      title: 'Fortalecimiento de la Credibilidad y Confianza',
+      description:
+        'Una página web bien diseñada y optimizada transmite profesionalismo y confiabilidad, lo que ayuda a fortalecer la credibilidad de la práctica médica en línea y aumentar la confianza de los pacientes potenciales',
+      icon: 'tabler:list-check',
+    },
+    {
+      title: 'Control de la Imagen de Marca',
+      description:
+        'La gestión de la reputación en línea permite a la práctica médica controlar activamente la imagen de su marca, respondiendo de manera efectiva a comentarios y críticas, y asegurándose de que la percepción pública sea positiva',
+      icon: 'tabler:rocket',
+    },
+    {
+      title: 'Reducción de Opiniones Negativas',
+      description:
+        "Al monitorear y gestionar proactivamente las revisiones y comentarios en línea, se pueden abordar rápidamente los problemas y preocupaciones de los pacientes, lo que reduce la posibilidad de que las opiniones negativas afecten la reputación de la práctica médica",
+      icon: 'tabler:arrows-right-left',
+    },
+    {
+      title: 'Diferenciación en el Mercado',
+      description:
+        'Una página web optimizada con SEO y una sólida gestión de reputación pueden diferenciar a la práctica médica de la competencia, posicionándola como una opción preferida para los pacientes en busca de atención médica de alta calidad y confiable',
+      icon: 'tabler:bulb',
+    },
+  ]}
+/>
+
 
   <Features2
     id="Servicios"
     title="Encontra valor en cada uno de nuestros servicios"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
     items={[
-      {
-        title: 'Gestión de Publicidad en Facebook (Meta)',
-        description: "Tus servicios aparecen donde está la la atención, en las redes sociales",
-        icon: 'flat-color-icons:advertising',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
-      },
       {
         title: 'Desarrollo y Optimización de Páginas Web',
         description:
@@ -105,31 +146,10 @@ const metadata = {
         },
       },
       {
-        title: 'Estrategias de Marketing Digital Personalizadas',
-        description:
-          "Cada práctica es diferente. Resaltamos lo que te hace especial, te llevamos al siguiente nivel.",
-        icon: 'flat-color-icons:document',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
-      },
-      {
         title: 'Optimización de motor de Busqueda (SEO)',
         description:
           'Te ponemos en la primera plana, en todos lados',
         icon: 'flat-color-icons:database',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
-      },
-      {
-        title: 'Diseño Creativo y Contenido Persuasivo',
-        description: 'Del concepto a la captura: Contenido que cuenta tu historia y captura miradas',
-        icon: 'flat-color-icons:voice-presentation',
         callToAction:{
           variant: 'terciary',
           text:'Conocé mas',
