@@ -5,7 +5,6 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import { getPermalink } from '~/utils/permalinks';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -128,33 +127,19 @@ const metadata = {
         description:
           "La mejor vitrina digital para atraer y cautivar con tus resultados",
         icon: 'flat-color-icons:template',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
+        
       },
       {
         title: 'Gestión de Reputación Online',
         description:
           'Cuidamos tu imagen de cara al cliente, asegurando esas 5 estrellas',
         icon: 'flat-color-icons:approval',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
       },
       {
         title: 'Optimización de motor de Busqueda (SEO)',
         description:
           'Te ponemos en la primera plana, en todos lados',
         icon: 'flat-color-icons:database',
-        callToAction:{
-          variant: 'terciary',
-          text:'Conocé mas',
-          href:getPermalink('/contact'),
-        },
       },
     ]}
   >

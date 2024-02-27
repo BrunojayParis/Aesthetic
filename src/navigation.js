@@ -6,14 +6,6 @@ export const headerData = {
       text: 'Servicios',
       href:  getPermalink('/services'),
     },
-    {
-      text: 'Pasos',
-      href: '/#Pasos',
-    },
-    {
-      text: 'Constulta Gratis',
-      href: '/#Consulta',
-    },
   ],
   actions: [{ text: 'Contactanos', href: getPermalink('/contact'), target: '' }],
 };
