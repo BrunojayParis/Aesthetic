@@ -5,7 +5,7 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contactanos', description = '', names } = Astro.props as Form;
 ---
 
-<form name={names} data-netlify="true">
+<form name={names} data-netlify="true" id="contact-form">
   {
     inputs &&
       inputs.map(
@@ -24,6 +24,7 @@ const { inputs, textarea, disclaimer, button = 'Contactanos', description = '', 
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                required
               />
             </div>
           )
@@ -42,6 +43,7 @@ const { inputs, textarea, disclaimer, button = 'Contactanos', description = '', 
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          required
         />
       </div>
     )
@@ -56,6 +58,7 @@ const { inputs, textarea, disclaimer, button = 'Contactanos', description = '', 
             name="disclaimer"
             type="checkbox"
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            required
           />
         </div>
         <div class="ml-3">
@@ -83,3 +86,34 @@ const { inputs, textarea, disclaimer, button = 'Contactanos', description = '', 
     )
   }
 </form>
+
+<script>
+  const form = document.getElementById('contact-form');
+  
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+    
+    try {
+      const response = await fetch('https://settled-spaniel-quick.ngrok-free.app/webhook-test/7582aa39-8161-40ee-bf5b-c66295f5d482', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to submit form. Please try again.');
+    }
+  });
+</script>
